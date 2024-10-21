@@ -10,7 +10,7 @@ public class Game {
     static JLabel vitorias;
 
     public static void intro() {
-        JOptionPane.showMessageDialog(null, "O famoso Jokenpô, Pedra vence tesoura, tesoura vence papel, papel vence pedra.\nMelhor de três!", "Como Jogar", 1);
+        JOptionPane.showMessageDialog(null, "O famoso Jokenpô, Pedra vence tesoura, tesoura vence papel, papel vence pedra.\nMelhor de três!", "Como Jogar", 1, new ImageIcon(Game.class.getResource("/images/notif.jpg")));
     }
 
     public static void abaJogo() {
@@ -26,7 +26,7 @@ public class Game {
         titulo.setForeground(Color.WHITE);
         panelMain.add(titulo);
 
-        ImageIcon originalIcon = new ImageIcon("src/images/rock left.png");
+        ImageIcon originalIcon = new ImageIcon(Game.class.getResource("/images/rock left.png"));
         Image originalImage = originalIcon.getImage();
         Image scaledImage = originalImage.getScaledInstance(180, 180, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(scaledImage);
@@ -36,8 +36,8 @@ public class Game {
         buttonRock.setBorder(BorderFactory.createEmptyBorder());
         buttonRock.setContentAreaFilled(true);
 
-        ImageIcon orignalIcon2 = new ImageIcon("src/images/paper left.png");
-        Image originalImage2 = orignalIcon2.getImage();
+        ImageIcon originalIcon2 = new ImageIcon(Game.class.getResource("/images/paper left.png"));
+        Image originalImage2 = originalIcon2.getImage();
         Image scaledImage2 = originalImage2.getScaledInstance(200, 200, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon2 = new ImageIcon(scaledImage2);
 
@@ -46,8 +46,8 @@ public class Game {
         buttonPaper.setBorder(BorderFactory.createEmptyBorder());
         buttonPaper.setContentAreaFilled(true);
 
-        ImageIcon orignalIcon3 = new ImageIcon("src/images/scissors left.png");
-        Image originalImage3 = orignalIcon3.getImage();
+        ImageIcon originalIcon3 = new ImageIcon(Game.class.getResource("/images/scissors left.png"));
+        Image originalImage3 = originalIcon3.getImage();
         Image scaledImage3 = originalImage3.getScaledInstance(200, 200, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon3 = new ImageIcon(scaledImage3);
 
@@ -105,16 +105,16 @@ public class Game {
 
         }
         vitorias.setText("Vitórias: " + contadorVitorias + " | Derrotas: " + contadorVitoriasComputador);
-        JOptionPane.showMessageDialog(null, "Sua escolha: "+ jogadaStrings[i] + "\nEscolha do computador: "+ jogadaStrings[jogadaComputador] +"\n" + resultado, "Resultado", 1);
+        JOptionPane.showMessageDialog(null, "Sua escolha: "+ jogadaStrings[i] + "\nEscolha do computador: "+ jogadaStrings[jogadaComputador] +"\n" + resultado, "Resultado", 1, new ImageIcon(Game.class.getResource("/images/notif.jpg")));
         verificarResultado();
     }
 
     private static void verificarResultado() {
         if (contadorVitorias == 3) {
-            JOptionPane.showMessageDialog(null, "Você venceu o jogo!", "Resultado", 1);
+            JOptionPane.showMessageDialog(null, "Você venceu o jogo!", "Resultado", 1, new ImageIcon(Game.class.getResource("/images/happy-cat.gif")));
             resetarGame();
         } else if (contadorVitoriasComputador == 3) {
-            JOptionPane.showMessageDialog(null, "Você perdeu o jogo!", "Resultado", 1);
+            JOptionPane.showMessageDialog(null, "Você perdeu o jogo!", "Resultado", 1, new ImageIcon(Game.class.getResource("/images/sad-cat.gif")));
             resetarGame();
         }
 
